@@ -82,7 +82,7 @@ void destruirMatriz(void** mat, int filas){
 }
 
 void** crearMatriz(int filas, int columnas, size_t tamElem){
-    void** mat = malloc(filas* sizeof(void*));
+    void** mat = malloc(filas* sizeof(filas));
     int i;
     if(!mat){
         return NULL;
@@ -95,6 +95,7 @@ void** crearMatriz(int filas, int columnas, size_t tamElem){
     }
     return mat;
 }
+
 
 void mostrarNombres(char** nombres, int cant){
     int i;
@@ -122,7 +123,7 @@ int pedirNombres(){
     nombre[strcspn(nombre, "\n")] = '\0';
 
     // Si el nombre no es "x", lo almacena
-        if (strcmp(nombre, ".") != 0 && strcmp(nombre,"") != 0){
+        if (strcmp(nombre, ".") != 0 && strcmp(nombre,"") != 0) {
             fprintf(pf,"%s\n",nombre);
             contJug++;
         }
